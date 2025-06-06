@@ -1,0 +1,5 @@
+export { default as StringType } from './StringType.vue'
+export { default as BooleanType } from './BooleanType.vue'
+export { default as NumberType } from './NumberType.vue'
+export { default as RangeType } from './RangeType.vue'
+export { default as ColorType } from './ColorType.vue'
