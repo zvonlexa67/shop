@@ -28,9 +28,5 @@ const tagComponents = { Update, Smart, Compare, Test1 }
       <q-tab no-caps name="r3" label="Резерв3" />
     </q-tabs>
   </q-toolbar>
-
-  <!-- <scroll-area style="height: calc(100vh - 120px);"> -->
     <component :is="tagComponents[isComponent]" />
-  <!-- </scroll-area> -->
-  <!-- <h1>edit</h1> -->
 </template>

@@ -32,8 +32,6 @@ const tagComponent = {
 
 const { form, product, characteristics, storeCharacteristics } = injected
 
-// console.log(characteristics)
-
 const types = {
   '1': 'StringType',
   '2': 'BooleanType',

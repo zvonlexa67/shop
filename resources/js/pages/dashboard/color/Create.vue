@@ -55,11 +55,6 @@ const onReset = () => {
       <q-list>
         <q-item>
           <q-item-section class="col-3 content-center">
-            <!-- <file-image 
-              ref="refFileImage" 
-              for="idFile_0" 
-              v-model="form.picture_file" height="120px" width="120px" /> -->
-
             <drop-image
               ref="refFileImage"
               :delete="false"
@@ -76,7 +71,6 @@ const onReset = () => {
 
           </q-item-section>
           <q-item-section class="col-6 justify-evenly q-ml-none">
-            <!-- <input-number readonly label="Id" v-model="form.id" :error_message="form.errors.id" :error="!!form.errors.id" /> -->
             <input-number label="Сортировка" v-model="form.sort" :error_message="form.errors.sort" :error="!!form.errors.sort" />
             <input-string label="Наименование" v-model="form.title" :error_message="form.errors.title" :error="!!form.errors.title" />
           </q-item-section>

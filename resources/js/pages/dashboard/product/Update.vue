@@ -7,10 +7,6 @@ interface InjectUpdate {
   form: any
   isComponent: any
 	updateProduct: () => void
-  // onNodeSelected: (nodeId: number) => void
-  // toTableProducts: () => void
-
-	// reloadProduct: (state: boolean, product_id?: number) => void
 }
 
 const injected = inject<InjectUpdate>('update')

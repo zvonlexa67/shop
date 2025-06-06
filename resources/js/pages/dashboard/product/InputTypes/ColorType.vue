@@ -5,8 +5,6 @@ import axios from 'axios';
 
 interface Props {
   char: Char
-  // title: string
-  // description?: string
 }
 
 const props = defineProps<Props>()
@@ -67,7 +65,6 @@ if (typeof last.value !== 'object') {
               </q-item-section>
               <q-item-section>
                 <q-item-label class="text-gries">{{ scope.opt.label }}</q-item-label>
-              <!-- <q-item-label caption>{{ scope.opt.description }}</q-item-label> -->
               </q-item-section>
             </q-item>
           </template>

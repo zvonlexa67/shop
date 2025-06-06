@@ -3,8 +3,6 @@ import type { FirstLastType, Char } from '@/types/product'
 
 interface Props {
   char: Char
-  // title: string
-  // description?: string
 }
 
 const props = defineProps<Props>()
@@ -31,7 +29,6 @@ if (typeof last.value !== 'boolean') {
           </q-tooltip>
       </q-item-section>
       <q-item-section avatar>
-        <!-- <q-toggle color="gries" v-model="first" val="battery" /> -->
         <q-toggle color="gries" v-model="first" />
         <q-tooltip transition-show="rotate" transition-hide="rotate" v-if="!!props.char.description">
           {{ props.char.description }}

@@ -3,8 +3,6 @@ import type { FirstLastType, Char } from '@/types/product'
 
 interface Props {
   char: Char
-  // title: string
-  // description?: string
 }
 
 const props = defineProps<Props>()

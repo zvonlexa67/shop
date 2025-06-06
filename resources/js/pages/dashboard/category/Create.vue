@@ -5,8 +5,6 @@ import { Btn } from '@/components/form/button'
 import { inject, watch } from 'vue'
 import { useTemplateRef } from 'vue'
 
-// import DnD from './treeNode/DnD.vue'
-
 type DropImageType = InstanceType<typeof DropImage>
 
 interface Create {

@@ -19,9 +19,6 @@ const image = props.product.picture_image[0] as string
 </script>
 
 <template>
-
-<!-- :style="{ width: '100%', maxWidth: props.widthList, height: '100%', maxHeight: props.heightList }" -->
-
   <q-list 
     :style="{ width: props.widthList, height: props.heightList }"
     bordered 

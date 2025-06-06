@@ -2,18 +2,9 @@
 import DashboardLayout from '@/layouts/DashboardLayout.vue'
 import List from './List.vue'
 
-// import Update from './Update.vue'
 import Edit from './Edit.vue'
 
-// import Smart from './Smart.vue'
-// import Compare from './Compare.vue'
-
 import Create from './Create.vue'
-
-// import Appen from './Appen.vue'
-
-// import AttachDetach from './characteristic/AttachDetach.vue'
-
 
 import { ref, provide, onMounted, onUpdated, toRef } from 'vue'
 import type { QTableProps } from 'quasar'
@@ -171,7 +162,6 @@ const onAttach = (characteristic_id: number | null) => {
 			route('dashboard.category.attach', { category_id: props.category?.id, characteristic_id: characteristic_id }),
 			{
 				method: 'post',
-				// only: [ ' errors', 'category', 'characteristics' ],
 				only: [ ' errors', 'category' ],
 				preserveState: true,
 				preserveScroll: true,
@@ -190,7 +180,6 @@ const onDetach = (selectedTable: QTableProps["selected"]) => {
             route('dashboard.category.detach', { category_id: props.category?.id, characteristic_id: selectedTable[0].id }),
             {
                 method: 'post',
-                // only: [ ' errors', 'category', 'characteristics' ],
                 only: [ ' errors', 'category' ],
                 preserveState: true,
                 preserveScroll: true,
@@ -256,14 +245,9 @@ provide('compare', { cat })
     </template>
     <template v-slot:after>
       <q-card flat class="slide-card full-height">
-        <!-- <q-card-section style="height: 340px;"> -->
         <q-card-section>
           <component :is="tagComponents[isComponent]" />
         </q-card-section>
-				<!-- <q-separator /> -->
-      	<!-- <q-card-section class="q-py-none">
-        	<attach-detach v-if="isComponent == 'Update'" />
-      	</q-card-section> -->
       </q-card>
     </template>
   </q-splitter>

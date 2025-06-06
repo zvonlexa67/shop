@@ -4,25 +4,6 @@ import type { QTableProps } from 'quasar'
 import type { Product } from '@/types/product'
 import { Btn } from '@/components/form/button'
 
-
-// import { ref, inject, onUpdated } from 'vue'
-
-// defineOptions({
-//   name: 'Table'
-// })
-
-// interface Column {
-//     label: string
-//     name: string
-//     field: string | ((row: any) => any)
-//     align?: 'left' | 'right' | 'center'
-// 	format?: (val: any) => any
-//     headerStyle?: string
-//     sortable?: boolean
-// }
-
-// type ColumnType = QTableProps["columns"]
-
 interface InjectTable {
   category: any
 	isComponent: 'Table' | 'Edit' | 'UpSert'
@@ -39,7 +20,7 @@ if (!injected) {
 const { category, reloadProduct, isComponent, destroyProduct } = injected
 
 const tableRef = ref()
-// const selected = ref<QTableProps["selected"][]>([])
+
 const selected = ref<Product[]>([])
 const filter = ref('')
 const pagination = ref({ rowsPerPage: 0 })
@@ -97,13 +78,8 @@ const columns = ref<QTableProps["columns"]>([
   ])
   
 const dblClick: QTableProps["onRowDblclick"] = (evt, row, index) => {
-// const dblClick = <QTableProps["onRowDblclick"]>(evt: Event, row: Product, index: number) => {
   reloadProduct(false, row.id)
 }
-  // const onDelete = () => {
-    // destroyProduct(selected.value[0].id)
-    // console.log('onDelete')
-  // }
 
 </script>
 
@@ -134,9 +110,6 @@ const dblClick: QTableProps["onRowDblclick"] = (evt, row, index) => {
       <btn :disable="!!selected?.length" label="Создать" @click="isComponent = 'UpSert'" /> 
       <btn :disable="!selected?.length" label="Изменить" @click="reloadProduct(false, selected[0].id)" /> 
       <btn color="dbrem" :disable="!selected?.length" label="Удалить" @click="destroyProduct(selected[0].id)"/>
-      <!-- <q-btn flat no-caps :disable="!!selected?.length" label="Создать" @click.stop.prevent="isComponent = 'Edit'" /> 
-      <q-btn flat no-caps :disable="!selected?.length" label="Изменить" @click.stop.prevent="reloadProduct(false, selected[0].id)" /> 
-      <q-btn flat no-caps color="dbrem" :disable="!selected?.length" label="Удалить" @click.stop.prevent="destroyProduct(selected[0].id)"/> -->
     </template>
   </q-table>
 </template>

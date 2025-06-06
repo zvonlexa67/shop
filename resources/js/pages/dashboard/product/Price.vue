@@ -2,7 +2,6 @@
 import { InputNumber } from '@/components/form/input'
 import { inject } from 'vue'
 
-
 interface InjectPrice {
   form: any
   storePrice: () => void

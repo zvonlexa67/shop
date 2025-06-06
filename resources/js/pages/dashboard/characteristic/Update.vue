@@ -21,7 +21,6 @@ if (!injected) {
 
 const { form, types, onSave, onReset, onDestroy, onNewGroup, onNewCharacteristic } = injected;
 
-// const { form, types, onSave, onReset, onDestroy, onNewGroup, onNewCharacteristic } = inject<{ [key: string]: any }>('update')
 </script>
 
 <template>

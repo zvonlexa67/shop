@@ -55,7 +55,6 @@ const saveItems = async () => {
   try {
     const { data } = await axios.post(route('dashboard.api.category.synccompare'), { id: cat.value.id, todoIds: todoIds, doneIds: doneIds })
 
-    // console.log(data)
   } catch (error) {
     console.log(error)
   }
@@ -96,7 +95,6 @@ init()
                 option-value="id" 
                 option-label="title"
                 />
-                <!-- @update:model-value="selected" -->
             </q-item-section>
           </q-item>
           <q-item>

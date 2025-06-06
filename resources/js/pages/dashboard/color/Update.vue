@@ -87,16 +87,6 @@ const onDestroy = () => {
       		<q-list>
         		<q-item>
 				<q-item-section class="col-3 content-center">
-
-					<!-- <file-image 
-            ref="refFileImage" 
-            :for="'idFile_' + props.color.id" 
-            :img="props.color.picture_image" 
-            v-model="form.picture_file" 
-            height="120px" 
-            width="120px" 
-          /> -->
-
         <drop-image
           :img="props.color.picture_image"
           ref="refFileImage"
@@ -109,13 +99,6 @@ const onDestroy = () => {
           height="100px"
           width="100px"
         />
-
-
-
-
-
-
-
 				</q-item-section>
 				<q-item-section class="col-6 justify-evenly q-ml-none">
 					<!-- <input-number readonly label="Id" v-model="form.id" :error_message="form.errors.id" :error="!!form.errors.id" /> -->

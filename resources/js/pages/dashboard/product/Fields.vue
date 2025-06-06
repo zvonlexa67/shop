@@ -1,13 +1,7 @@
 <script setup lang="ts">
-// import String from '@/pages/dashboard/product/InputTypes/StringType.vue'
-// import Boolean from '@/components/types/Boolean.vue'
-// import Integer from '@/components/types/Integer.vue'
-// import Real from '@/components/types/Real.vue'
 import RangeInt from '@/components/types/RangeInt.vue'
 import RangeReal from '@/components/types/RangeReal.vue'
 import Brand from '@/components/types/Brand.vue'
-
-// import Color from '@/components/types/Color.vue'
 
 import Dimension from '@/components/types/Dimension.vue'
 
@@ -80,15 +74,6 @@ const init = (idType: number) => {
 }
 
 isComponent.value = init(props.type)
-
-
-// console.log('isComponent.value')
-// console.log(isComponent.value)
-// console.log(props.type)
-// console.log(props.title)
-// console.log(props.description)
-// console.log(typeof props.title)
-// console.log(typeof props.description)
 
 </script>
 

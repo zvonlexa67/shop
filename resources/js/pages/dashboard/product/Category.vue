@@ -26,7 +26,6 @@ watch(() => form.categories, (newVal, oldVal) => {
 <template>
   <div class="row justify-center q-ma-lg">
     <q-list bordered separator>
-    <!-- <q-list class="width-50" bordered separator> -->
       	<q-item>
         	<q-item-section>
             <q-tree

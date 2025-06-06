@@ -5,14 +5,12 @@ import Create from './Create.vue'
 import Edit from './Edit.vue'
 
 import UpSert from './Update.vue'
-// import { SeparatorVertical } from 'lucide-vue-next'
 import { useForm, router } from '@inertiajs/vue3'
 import { toRaw, toRef, ref, provide, onUpdated, onMounted, inject } from 'vue'
 
 import type { Category, Characteristic } from '@/types'
 import type { Product } from '@/types/product'
-// import { FormDataConvertible } from '@inertiajs/core'
-// import axios from 'axios';
+
 
 interface Props {
   products: Product[] | null
@@ -38,14 +36,8 @@ const product = toRef(props.product)
 const categories = toRef(props.categories)
 const characteristics = toRef(props.characteristics)
 
-// const category = toRef(props.category)
-
-// const selectedTree = ref<number>(0)
 const isComponent = ref<ComponentKey>('List')
 const tagComponetns = { List, Create, Edit, UpSert }
-
-// const widthSplitter = ref<number>(20)
-// const filterTree = ref<string>('')
 
 const form = useForm<FormDataType>({
   id: 0,
@@ -73,26 +65,6 @@ const form = useForm<FormDataType>({
 
 ////////////////product/////////////////////////////////
 
-// const onNodeSelected = (nodeId: number) => {
-//   nodeId ??= category.value?.id ?? 1
-
-//   router.visit(
-//     route('dashboard.product.index', { category_id: nodeId, product_id: 0 }),
-//     {
-//       method: 'get',
-//       only: [ 'errors', 'category' ],
-//       preserveState: true,
-//       preserveScroll: true,
-//       onSuccess: () => {
-//         category.value = props.category
-//         resetProduct()
-//         isComponent.value = 'Table'
-//         selectedTree.value = nodeId
-//       }
-//     }
-//   )
-// }
-
 const changeForm = () => {
   form.id = 0
   form.active = true
@@ -103,9 +75,6 @@ const changeForm = () => {
   form.description = ''
   form.picture_image = []
 
-  // if (category.value !== null) {
-  //   form.category_id = category.value.id
-  // }
 }
 
 const resetProduct = () => {
@@ -118,14 +87,6 @@ const resetProduct = () => {
   form.picture_image = []
   form.image = null
 
-  // if (category.value !== null) {
-  //   form.category_id = category.value.id
-  // }
-
-    // form.base = null
-    // form.nds = null
-    // form.purchase = null
-    // form.price_nds = null
 }
 
 const rollbackProduct = () => {
@@ -143,13 +104,6 @@ const rollbackProduct = () => {
     form.image = null
   }
 
-  // if (category.value !== null) {
-  //   form.category_id = category.value.id
-  // }
-    // form.base = props.product.base
-    // form.nds = props.product.nds
-    // form.purchase = props.product.purchase
-    // form.price_nds = props.product.price_nds
 }
 
 const toTableProducts = () => {
@@ -183,16 +137,6 @@ const storeProduct = () => {
       }
     )
   }
-  //  else {
-  //     // form.category_id = category.value.id
-  //   form._method = 'PUT'
-  //   form.post(route('dashboard.product.update'),
-  //     {
-  //       only: [ 'errors', 'category', 'product' ],
-  //       //  preserveState: false,
-  //     }
-  //   )
-  // }
 }
 
 const updateProduct = () => {
@@ -211,19 +155,6 @@ const updateProduct = () => {
         }
       }
     )
-
-    // form.post(route('dashboard.product.store'),
-    //   {
-    //     only: [ 'errors', 'product', 'products' ],
-    //     onSuccess: () => {
-    //       product.value = props.product
-    //       products.value = props.products
-    //       rollbackProduct()
-    //       isComponent.value = 'Edit'
-    //     }
-    //   }
-    // )
-
   }
 }
 
@@ -348,8 +279,6 @@ const charBrandOptions = ref([])
 
 const storeCharacteristics = () => {
 
-    // console.log(form.characteristics)
-
     form.characteristics = characteristics.value
 
     form._method = 'PUT'
@@ -364,46 +293,16 @@ const storeCharacteristics = () => {
       }
     })
 
-  // router.put(
-  //   route('dashboard.product.store.characteristics'),
-  //   {
-  //     data: {
-  //       _method: 'PUT',
-  //       category_id: category.value?.id,
-  //       product_id: product.value?.id,
-  //       product_pivot_id: product.value?.pivot_id,
-  //       char: props.characteristics as FormDataConvertible,
-  //     },
-  //     only: [ 'errors', 'characteristics' ],
-  //     preserveState: true,
-  //     preserveScroll: true,
-  //   }
-  // )
 }
 
 const loadCharDimentionOptions = async () => {
   if (charDimensionOptions.value.length == 0) {
     try {
-      // const { data } = await axios.get(route('dashboard.api.dimension.options'))
-
-      // charDimensionOptions.value = data
     } catch(error) {
       console.log(error)
     }
   }
 }
-
-// const loadCharColorOptions = async () => {
-//   if (charColorOptions.value.length == 0) {
-//     try {
-//       // const { data } = await axios.get(route('dashboard.api.color.options'))
-
-//       // charColorOptions.value = data
-//     } catch (error) {
-//       console.log(error)
-//     }
-//   }
-// }
 
 const loadCharBrandOptions = async () => {
   if (charBrandOptions.value.length == 0) {
@@ -433,17 +332,6 @@ const storePrice = () => {
 /////////////////////////////////////////////////////////
 
 onUpdated(() => {
-  // console.log('onUpdated')
-
-  // if (props.product) {
-  //   rollbackProduct()
-  //   isComponent.value = 'Edit'
-  // }
-
-  // else {
-  //   resetProduct()
-  //   isComponent.value = 'Table'
-  // }
 })
 
 onMounted(() => {
@@ -454,14 +342,6 @@ onMounted(() => {
     isComponent.value = 'Edit'
   } 
   
-  // else {
-  //   resetProduct()
-  //   isComponent.value = 'Table'
-  // }
-
-  // if (category) {
-  //   selectedTree.value = category.value?.id ?? 0
-  // }
 })
 
 provide('list', { products, isComponent, loadProduct })
@@ -477,72 +357,17 @@ provide('description', { form, storeDescription })
 
 provide('characteristics', { form, product, characteristics, storeCharacteristics })
 
-// provide('upsert', { form, storeProduct, reloadProduct, toTableProducts })
-// provide('upsert', { form, storeProduct, toTableProducts })
-// provide('upsert', { form, storeProduct, toTableProducts, onNodeSelected })
-
-
 provide('price', { form, storePrice, reloadProduct })
 
 provide('dimension', { charDimensionOptions, loadCharDimentionOptions })
 // provide('color', { charColorOptions, loadCharColorOptions })
 provide('brand', { charBrandOptions, loadCharBrandOptions })
 
-// console.log(toRaw(props.product))
-// console.log(toRaw(props.characteristics))
 </script>
 
 <template>
   <DashboardLayout>
-
-<!--
-    <q-toolbar class="border-bottom-grey-light-0">
-      <q-input
-        v-model="filterTree"
-        label="Категория"
-        label-color="gries"
-        color="gries"
-        style="height: 40px;"
-        dense
-      >
-        <template v-slot:append>
-          <q-icon v-if="filterTree != ''" name="fa-solid fa-xmark" @click="filterTree = ''" class="cursor-pointer" />
-        </template>
-      </q-input>
-      <q-space />
-      <div class="bg-grey-light text-gries" >
-        &nbsp; <span v-if="!!form.id">&laquo; {{  form.id }} &raquo;</span> &nbsp; <span v-if="!!form.title">&laquo; {{ form.title }} &raquo;</span> &nbsp;
-      </div>
-    </q-toolbar>
-    <q-splitter v-model="widthSplitter" style="height: calc(100vh - 168px)" after-class="no-scroll" class="q-ml-md">
-      <template v-slot:before>
-        <q-tree
-          ref="tree"
-          icon="fa-solid fa-chevron-right"
-          :nodes="categories"
-          node-key="id"
-          label-key="title"
-          text-color="gries"
-          selected-color="lblue"
-          class="text-font-size-small"
-          :filter="filterTree"
-          v-model:selected="selectedTree"
-          @update:selected="onNodeSelected"
-          default-expand-all
-        />
-      </template>
-      <template v-slot:separator>
-        <SeparatorVertical class="text-gries"/>
-      </template>
-      <template v-slot:after>
-        <component :is="tagComponetns[isComponent]" v-if="selectedTree > 1"/>
-      </template>
-    </q-splitter>
-
-  -->
-
     <component :is="tagComponetns[isComponent]" />
-
   </DashboardLayout>
 </template>
 

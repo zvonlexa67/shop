@@ -60,7 +60,6 @@ const saveItems = async () => {
   try {
     const { data } = await axios.post(route('dashboard.api.category.syncsmart'), { id: cat.value.id, todoIds: todoIds, doneIds: doneIds })
 
-    // console.log(data)
   } catch (error) {
     console.log(error)
   }

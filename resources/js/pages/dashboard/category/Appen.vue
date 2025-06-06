@@ -1,10 +1,6 @@
 <script setup lang=ts>
   import { inject } from 'vue'
 
-//   defineOptions({
-//     name: 'Appen'
-//   })
-
 interface InjectAppen {
     form: any
     cat: any
